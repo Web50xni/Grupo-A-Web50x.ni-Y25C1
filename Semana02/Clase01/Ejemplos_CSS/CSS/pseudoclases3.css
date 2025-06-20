@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    background-color: lightgoldenrodyellow;
+    padding: 8px 10px;
+}
+
+section > div { /* Selector de hijos */
+    padding: 15px 10px;
+    margin: 50px 10px;
+    box-shadow: 5px 5px 6px #22285b;
+    cursor: pointer;
+}
+
+/* Las Pseudoclases permiten agregar estilos a elementos dependiendo de diversos estados o interacciones. */
+
+
+
+/* Permite aplicar estilos a hijos de un elemento padre según el patrón indicado en el parámetro  */
+
+section > div:nth-child(odd) {
+    background-color: lightskyblue;
+}
+
+section > div:nth-child(even) {
+    background-color: lightpink;
+}
+
+/* Pseudoclase de interacción: Hover */
+
+section > div:hover {
+    transition: 250ms; /* Un cuarto de milisegundo */
+    box-shadow: 5px 9px 2px #FF793F;
+}
+
+
+input[type="text"] {
+    padding: 10px 8px;
+    border-width: 0px 0px 2px 0px; /*arriba, derecha, abajo, izquierda*/
+    border-color: #22285b;
+    color: black;
+}
+
+/* La Pseudoclase :focus se utiliza para elementos que son seeccionables en la página, como inputs y textareas, entre otros.*/
+
+input[type="text"]:focus {
+    outline: none;
+    padding: 15px 13px;
+    border-bottom: 3px solid #FF793F;
+    background-color: rgb(250, 243, 243);
+    transition: 250ms;
+}

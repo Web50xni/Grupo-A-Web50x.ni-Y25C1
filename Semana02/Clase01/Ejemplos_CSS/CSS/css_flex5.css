@@ -1,0 +1,58 @@
+/* 
+Algunas etiquetas HTML, como el <body> cuentan con propiedades CSS asignadas por defecto, de esta forma podemos 
+eliminar propiedades como el margin y el padding. Ejemplo: Eliminar el margen superior izquierdo por defecto.
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100vw;
+    height: 70px;
+    background-color: lightcyan;
+    display: flex;
+    flex-direction: row; /* por defecto */
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px 10px;
+    gap: 5px;
+    
+    position: relative;
+}
+
+.contenedorImg {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoImg {
+    width: 130px;
+    height: 100px;
+}
+
+header > a {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(45deg, lightgoldenrodyellow, #FB9E3A);
+    border-radius: 9px;
+    height: 100%;
+    padding: 0px 10px;
+    /* ¿Cómo eliminar estilos por defecto de un <a>? */
+    text-decoration: none;
+    color: #29306b;
+}
+
+/* Extra - Ps */
+
+.textoCentado {
+    height: 70px;
+    width: 50vw;
+    margin-top: 50px;
+    background-color: #ff793f;
+    padding: 10px 0px;
+    box-shadow: 10px 9px 3px #29306b;
+}

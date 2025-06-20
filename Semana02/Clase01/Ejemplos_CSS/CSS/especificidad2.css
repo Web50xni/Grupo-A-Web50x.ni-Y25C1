@@ -1,0 +1,68 @@
+/* Eliminar márgenes y paddings por defecto */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+center {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+/*
+0. !important
+1. Estilos en línea
+2. id
+3. Class
+4. type
+5. tag
+
+*/
+
+.selectorClase { /* El selector de clase especifica qué elementos tendrán 'X' estilos. */
+    background-color: lightcoral;
+}
+
+#selectorId { /* El selector de ID es único a una sola etiqueta HTML y tiene mayor prioridad sobre las clases y selectores de etiqueta */
+    background-color: lightseagreen;
+}
+
+h3 {
+    background-color: lightsalmon;
+}
+
+/* Selectores de tipos */
+
+input[type="text"] {
+    background-color: lightskyblue;
+}
+
+input[type="password"] {
+    background-color: violet;
+}
+
+/* los selectores de tipo y ID tienen mayor prioridad que los selectores de etiqueta */
+
+input {
+    background-color: lightgoldenrodyellow; 
+}
+
+#inputContrasena {
+    background-color: #FEC5F6;
+}
+
+#inputSubmit {
+    padding: 10px;
+    background-color: lightgreen;
+}
+
+/* 
+El selector de tipo tiene menor especificidad que el selector de ID. Pero al utilizar el 
+indicador de prioridad !important, la jerarquía se omite y se prioriza el estilo indicado. 
+*/
+
+input[type="submit"] {
+    background-color: aquamarine !important;
+}

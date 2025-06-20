@@ -1,0 +1,34 @@
+/* 
+    Pseudoclases
+
+    .divsContainer
+
+*/
+
+h2 {
+    text-align: center;
+}
+
+/* Estilos iniciales de las etiquetas párrafo <p> */
+.infoGrupo, .infoHorario {
+    width: 400px;
+    padding: 7px 8px;
+    border-radius: 7px;
+    border: 2px dashed lightskyblue;
+    text-align: center;
+}
+
+.infoGrupo {
+    background-color: lightgreen;
+}
+
+.infoHorario {
+    background-color: lightcoral;
+}
+
+/* Estilizar cada Div mediante clases */
+.contenedor1 {
+    background-color: lightgoldenrodyellow;
+    margin: 20px 50px;  
+    padding: 10px;
+}

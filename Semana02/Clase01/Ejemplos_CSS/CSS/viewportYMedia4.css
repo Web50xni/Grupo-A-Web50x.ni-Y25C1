@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+center {
+    margin-top: 50px;
+}
+
+
+
+body {
+    background-color: lightgreen;
+}
+
+@media (max-width: 800px) {
+
+    body {
+        background-color: lightcoral;
+    }   
+}
+
+/* A 'vw' y 'vh' se les conocen como medidas relativas, y corresponden al porcentaje de ancho y alto de la pantalla, respectivamente. */
+
+div[name="div80"] {
+    background-color: lightblue;
+    width: 80vw;
+    height: 7vh;
+}
+
+div[name="div50"] {
+    background-color: lightseagreen;
+    width: 50vw;
+    height: 5vh;
+}
+
+div[name="div25"] {
+    background-color: lightyellow;
+    width: 25vw;
+    height: fit-content; /* Una propiedad que se puede considerar responsiva. Adapta el ancho/alto al elemento que está conteniendo. Se puede utilizar para vitar desbordamientos en X o Y. */
+}
+
+/* No es lo mismo 25vw cuando la pantalla tiene un ancho de 1300px, que 25vw cuando la pantalla tiene un ancho de 500px, por ejemplo. Funciona de la misma forma con vh. */

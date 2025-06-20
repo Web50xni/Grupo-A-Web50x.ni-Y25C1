@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/especificidad2.css">
+    <title>Especificidad de Selectores</title>
+</head>
+<body>
+
+    <!-- 
+    Los selectores CSS tienen una especificidad determinada. En este ejemplo comparamos cuáles estilos se priorizan según la especificidad. 
+    También conoceremos el indicador de prioridad !important 
+    -->
+
+    <center>
+        <h1>Selectores de Etiqueta</h1>
+        <h3>HTML</h3>
+        <h3>CSS</h3>
+        <h3>Bootstrap</h3>
+
+        <br><hr><br>
+
+        <h1>Selectores de Clase | ID | Tipo | Indicador de Prioridad </h1>
+
+        <h3 class="selectorClase">Git</h3>
+        <h3 class="selectorClase">Python</h3>
+        <h3 id="selectorId" class="selectorClase">Django</h3>
+
+
+        <br><hr><br>
+        
+        <input type="text" placeholder="Hola">
+        <input type="password" id="inputContrasena" placeholder="Adios">
+
+        <!-- style="background-color: magenta;" El estilo en línea tiene la mayor especificidad, despues de !important --> 
+        <input type="submit" id="inputSubmit">
+
+    </center>
+    
+</body>
+</html>

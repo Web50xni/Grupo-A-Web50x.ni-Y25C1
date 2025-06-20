@@ -1,0 +1,51 @@
+body, html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+}
+
+.contenedor {
+    width: 80vw;
+    height: 70vh;
+    display: grid; /* 1fr es una unidad relativa, y hace referencia a 'la fracción del espacio disponible'. FR = "Fracción". */
+    grid-template-columns: repeat(2, 1fr); /* Si se quieren indicar más columnas del mismo tamaño, se puede utilizar la función repeat(Ncolumnas/filas, ancho/alto) */
+    text-align: center;
+    background-color: lightblue;
+}
+
+.contenedor > div {
+    border-bottom: 1px solid black;
+}
+
+.contenedor > div:nth-child(even) {
+    background-color: lightcoral;
+}
+
+#noveno {
+    background-color: yellow;
+}
+
+#cuarto {
+    background-color: lightseagreen;
+}
+
+/* Podemos controlar la posición de los elementos seleccionados mediante propiedades como grid-column y grid-row. */
+
+/* Control de Posiciones */
+#noveno {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+#cuarto {
+    grid-row: 5 / 6;
+    grid-column: 1 / 2;
+}
