@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejemplos</title>
+	<link rel="stylesheet" href="./styles/styles.css">
+	<!-- Importar Bootstrap desde CDN -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<nav>
+		<img src="./images/web50.png" class="logo" alt="Logo web50">
+
+		<div class="formularios">
+			<form class="formContainer">
+				<input type="text" placeholder="Ingresa un nombre">
+
+				<button>Busqueda</button>
+			</form>
+		</div>
+
+	</nav>
+
+	<br>
+	<!-- Utilizando componente Carousel de Bootstrap -->
+	<div class="carouselContainer"> 
+		<div id="carouselExampleIndicators" class="carousel slide">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+					aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+					aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+					aria-label="Slide 3"></button>
+				<!-- Por cada imagen agregada, integran otro button, que son indicadores utilizados por Bootstrap para determinar de cuántas imágenes será el carousel. -->
+				<!--
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+					aria-label="Slide 4"></button>
+				-->
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="./images/manzana.jpg" class="d-block w-100 carouselImagenes" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="./images/repSandia.webp" class="d-block w-100 carouselImagenes" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="./images/repGuayaba.webp" class="d-block w-100 carouselImagenes" alt="...">
+				</div>
+				<!-- Para añadir más imágenes al carousel solo agregan más etiquetas img y actualizan los <button> -->
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+
+	<br>
+	<hr>
+	<!-- Texto Central. Planeado como un input, pero ya fue agregado en el nav. -->
+
+	<div class="tituloContainer">
+			<h3>Tecnologías y Lenguajes</h3>
+	</div>
+	
+	<!-- Seccioón adaptada con Mediaqueries -->
+
+	<section class="tecnologiasContainer">
+
+		<article>
+			<div class="tecnologiasInfo">
+				<h3>HTML</h3>
+				<p>HTML (Lenguaje de Marcas de Hipertexto, del inglés HyperText Markup Language) es el componente más básico de la Web. Define el significado y la estructura del contenido web. Además suele ser utilizado en conjunto con CSS.</p>
+			</div>
+			<div class="tecnologiasInfo"><img src="./images/tecnologias_html.png" class="tecnologiasImagen" alt="Logo HTML"></div>
+		</article>
+
+		<article>
+			<div class="tecnologiasInfo">
+				<h3>CSS</h3>
+				<p>CSS es uno de los lenguajes base de la Open Web y posee una especificación estandarizada por parte del W3C. Anteriormente , el desarrollo de varias partes de las especificaciones de CSS era realizado de manera sincrónica, lo que permitía el versionado de las recomendaciones.</p>
+			</div>
+			<div class="tecnologiasInfo"><img src="./images/tecnologias_css.png" class="tecnologiasImagen" alt="Logo HTML"></div>
+		</article>
+	
+		<article>
+			<div class="tecnologiasInfo">
+				<h3>GIT</h3>
+				<p>Es un preprocesador de CSS que extiende las capacidades de CSS, permitiendo a los desarrolladores escribir código más eficiente, organizado y mantenible. En esencia, Sass actúa como un lenguaje intermedio que se compila a CSS estándar que los navegadores pueden entender.</p>
+			</div>
+			<div class="tecnologiasInfo"><img src="./images/tecnologias_sass.png" class="tecnologiasImagen" alt="Logo HTML"></div>
+		</article>
+
+		<article>
+			<div class="tecnologiasInfo">
+				<h3>GIT</h3>
+				<p>Git es un software de control de versiones (SCV) distribuido, libre y de código abierto. Facilita el manejo de código fuente con equipos de desarrollo distribuidos. La principal diferencia con SCV previos es la habilidad para hacer operaciones comunes (branching, committing, etc.) en el equipo de desarrollo local, sin tener que modificar el repositorio master o tener de acceso de escritura a él.</p>
+			</div>
+			<div class="tecnologiasInfo"><img src="./images/tecnologias_git.png" class="tecnologiasImagen" alt="Logo HTML"></div>
+		</article>
+	</section>
+
+	<!-- Script necesario para añadir funcionalidades extras a los componentes -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

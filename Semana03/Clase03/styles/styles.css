@@ -1,0 +1,179 @@
+body {
+    background-color: #ff793f;
+}
+
+/* Mobile First */
+
+p {
+    /* Elimina un elemento del flujo normal de la página. No desaparece del DOM, pero es como si no existiera. */
+    display: none;
+}
+
+nav {
+    width: 100vw;
+    height: fit-content;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    border-bottom: 1px solid lightgray;
+    /*flex-wrap: Propiedad habilitada por CSS Flex que permite posicionar los elementos 'hacia abajo', en caso de que no haya espacio horizontal suficiente. */
+}
+
+.logo {
+    width: 15vw;
+    min-width: 120px; /* La imagen no puede reducir a más de 120px */
+    max-height: 100px;
+    aspect-ratio: 16/9; 
+/* Pueden asignar un ancho inicial a una imagen. Haciendo uso de la propiedad aspect-ratio pueden especificar la relación de 
+    ancho/alto para que esta se redimensione según la pantalla en la que se visualice.
+    - Cada 16 unidades de ancho, 9 unidades de altura. Es una relación de aspecto que describe un rectángulo.
+*/
+}
+
+.carouselContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightcyan;
+    margin-top: 20px;
+    padding: 10px 0px;
+}
+
+#carouselExampleIndicators {
+    max-width: 800px;
+}
+
+.carouselImagenes {
+    width: 85vw;
+    min-width: 350px;
+    aspect-ratio: 16/9;
+}
+
+.formularios {
+    width: 30%;
+    min-width: 250px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0px 5px;
+}
+
+.formularios, .formularios > form {
+    height: 80%;
+}
+
+.formularios > form {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+}
+
+.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formContainer > input {
+    width: 100%;
+    padding: 7px;
+    outline: none;
+}
+
+.formContainer > input, .formContainer > button {
+    border: 1px solid #f5e2e2;
+    border-radius: 5px;
+}
+
+.formContainer > button {
+    background-color: lightgreen;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Estilos del Título Central Tecnologías */
+
+.tituloContainer {
+    width: 100vw;
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ff793f;
+}
+
+.tituloContainer > h3 {
+    width: 90%;
+    background-color: lightsalmon;
+    border-radius: 8px;
+    padding: 7px 0px;
+}
+
+/* Sección de Tecnologías */
+
+.tecnologiasContainer, .tecnologiasContainer > article, .tecnologiasInfo {
+    /* Selector de clase y selector de hijos, respectivamente. */
+    display: flex;
+    flex-direction: column;
+    padding: 7px 5px;
+    justify-content: center; /* Alineación vertical */
+    align-items: center; /* Alineación horizontal */
+}
+
+.tecnologiasContainer {
+    gap: 5px;
+}
+
+.tecnologiasContainer > article {
+    width: 95%;
+    height: fit-content;
+    gap: 5px;
+    background-color: lightblue;
+    border-radius: 15px;
+}
+
+.tecnologiasInfo {
+    width: 95% !important; /* Cambia en base a las dimensiones de la pantalla, usando mediaqueries */
+    background-color: #434a85;
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+
+.tecnologiasInfo > h3 {
+    color: lightgoldenrodyellow;
+}
+
+.tecnologiasImagen {
+    width: 15vw;
+    max-height: 200px;
+    aspect-ratio: 0.8;
+}
+
+/* Interfaz usualmente de Ordenador (Utilizando Media Queries) */
+
+@media (min-width: 850px) { /* Cuando se cuente con un mínimo de 850px de ancho, aplicar los siguientes estilos. */
+    
+    .tecnologiasContainer > article {
+        height: 300px;
+        flex-direction: row;
+    }
+
+    .tecnologiasInfo {
+        height: 100% !important;
+    }
+
+    p {
+        /* 
+        Muestra los párrafos nuevamente luego de 'desaparecer' con display: none;
+        Display inline-block permite que una etiqueta HTML tenga propiedades width y height, y en este caso
+        se aplican las por defecto.
+        */
+        display: inline-block;
+        color: #fff6f6;
+        text-align: justify; /* Estilo de texto justificado */
+    }
+}
