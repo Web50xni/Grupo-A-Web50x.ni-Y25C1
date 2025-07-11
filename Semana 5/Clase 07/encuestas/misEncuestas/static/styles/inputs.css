@@ -1,0 +1,28 @@
+
+/* Estilos de input texto y numérico */
+textarea {
+    resize: none;
+    /*width: 95%;*/
+}
+
+.inputs-large {
+    border-width: 0px 0px 2px 0px;
+    padding: 7px 7px;
+    border-bottom: 2px solid lightseagreen;
+    outline: none;
+}
+
+.inputs-large:focus, .inputs-small:hover {
+    box-shadow: 5px 3px 3px lightseagreen;
+    transition: 250ms;
+    background-color: #f8f5f5;
+}
+
+/* Estilos de botones */
+
+.inputs-small {
+    padding: 7px 7px;
+    cursor: pointer;
+    background-color: white;
+    border: 2px dashed lightseagreen;
+}

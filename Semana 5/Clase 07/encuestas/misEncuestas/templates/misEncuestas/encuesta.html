@@ -1,0 +1,29 @@
+{% extends 'misEncuestas/layout.html' %}
+{% load static %}
+
+{% block title %}Encuesta de {{ tema }}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/inputs.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/encuesta.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    {# Imprimir Encuesta #}
+
+    <form class="encuesta-container" action="{% url 'encuestas' tema %}" method="post">
+        {% csrf_token %}
+        {% for campo in form %}
+            <h3>{{ campo.label_tag }}</h3>
+            {{ campo }}
+        {% endfor %}
+
+        <input type="submit" class="inputs-small" value="Enviar Respuesta">
+    </form>
+
+    {% if mensaje %}
+        {{ mensaje }}
+    {% endif %}
+
+{% endblock %}
