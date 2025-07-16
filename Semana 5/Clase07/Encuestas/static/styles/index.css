@@ -1,0 +1,44 @@
+/* Estilos de elementos dentro de <main> */
+
+.banner, .seccionEncuestas, .encuestas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner, .seccionEncuestas {
+    background-color: aliceblue;
+}
+
+.banner {
+    width: 70%;
+    height: 120px;
+}
+
+.seccionEncuestas {
+    width: 70%;
+    height: fit-content;
+    flex-direction: column;
+    padding: 10px 5px;
+}
+
+.encuestas {
+    height: 100px;
+    width: 60%;
+}
+
+.encuestas > a {
+    text-decoration: none;
+}
+
+.seccionEncuestas > div:nth-child(even) {
+    background-color: lightseagreen;
+}
+
+.seccionEncuestas > div:nth-child(odd) {
+    background-color: lightskyblue;
+}
+
+.bordeGeneral {
+    border: 2px dashed lightsteelblue;
+}

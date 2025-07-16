@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    
+    <div class="banner bordeGeneral">
+        <h1>Una página para responder encuestas. 😎</h1>
+    </div>
+
+    <hr>
+
+    <section class="seccionEncuestas bordeGeneral">
+        <h2>Encuestas disponibles:</h2>
+
+        <div class="encuestas"><a href="{% url 'encuestas' 'HTML' %}"><h2>HTML</h2></a></div>
+        <div class="encuestas"><a href="{% url 'encuestas' 'CSS' %}"><h2>CSS</h2></a></div>
+        <div class="encuestas"><a href="{% url 'encuestas' 'Git' %}"><h2>Git</h2></a></div>
+
+    </section>
+
+
+  
+{% endblock %}

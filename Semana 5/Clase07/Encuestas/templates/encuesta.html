@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Encuesta de {{ tema }}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/inputs.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/encuesta.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <form action="{% url 'encuestas' tema %}" method="post" class="encuesta-container">
+        {% csrf_token %}    
+        <h2>¿Qué es HTML?</h2>
+        
+        <input type="text" name="iniciales_op1" class="inputs-large" placeholder="Escribe el concepto">
+            
+        <h2>¿A qué hace referencia HTML?</h2>
+        <span>
+                <label for="op1HTML">Hypertext Markup Language</label>
+                <input type="radio" name="op1HTML" id="op1HTML" value="op1HTML">
+            
+            </span>
+
+            <span>
+                <label for="op2HTML">HTTP Markup Language</label>
+                <input type="radio" name="op2HTML" id="op2HTML" value="op2HTML">
+            </span>
+
+            <span>
+
+                <label for="op3HTML">Hypertext Mark Language</label>
+                <input type="radio" name="op3HTML" id="op3HTML" value="op3HTML">
+            </span>
+
+            
+            <span>
+
+                <label for="op4HTML">Hypercarry Tryndramere Platinum</label>
+                <input type="radio" name="op4HTML" id="op4HTML" value="op4HTML">
+            </span>
+            
+        <h2>La etiqueta HTML permite...</h2>
+        <span>
+            <label for="opc1TagHTMLlabel">Indicar metadatos.</label>
+            <input type="checkbox" name="opc1TagHTMLlabel" id="opc1TagHTMLlabel">
+        </span>
+
+        <span>
+            <label for="opc2TagHTMLlabel">Enlazar archivos.</label>
+            <input type="checkbox" name="opc2TagHTMLlabel" id="opc2TagHTMLlabel">
+        </span>
+
+        <span>
+            <label for="opc3TagHTMLlabel">Escribir código del cuerpo de página.</label>
+            <input type="checkbox" name="opc3TagHTMLlabel" id="opc3TagHTMLlabel">
+        </span>
+
+        <span>
+            <label for="opc4TagHTMLlabel">No se</label>
+            <input type="checkbox" name="opc4TagHTMLlabel" id="opc4TagHTMLlabel">
+        </span>
+
+        <input type="number" min="0" class="inputs-small" name="interInput" id="interInput" placeholder="Ingresa un entero positivo">
+
+        <input type="submit" name="HTML" id="HTML" value="Enviar">
+
+        
+    </form>
+
+    
+
+
+{% endblock %}
