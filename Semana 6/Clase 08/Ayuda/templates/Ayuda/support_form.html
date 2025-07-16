@@ -1,0 +1,9 @@
+{% extends 'Ayuda/layout.html' %}
+{% block content %}
+    <h2>Solicitar soporte tecnico</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Solicitar</button>
+    </form>
+{% endblock %}
