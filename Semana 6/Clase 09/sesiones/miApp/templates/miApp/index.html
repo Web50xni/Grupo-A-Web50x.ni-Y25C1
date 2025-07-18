@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Sesiones en Django</title>
+</head>
+<body>
+    
+    <h1 class="text-center font-bold bg-red-300 w-70vw pt-2 pb-2">Lista de Tareas</h1>
+
+    <div class="flex flex-col justify-center items-center bg-cyan-200 rounded-xl m-5 p-5">
+        
+        {% if tareas %}
+            <ul class="w-fit text-center flex flex-col p-5 gap-2">
+                {% for tarea in tareas %}
+                    <li class="w-lg bg-blue-500 rounded-sm cursor-pointer">{{ tarea }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form action="{% url 'index' %}" class="w-fit bg-pink-200 text-center flex flex-col p-5 gap-2" method="post">
+            {% csrf_token %}
+            <input type="text" name="tarea" class="bg-red-300 rounded-sm pt-2 pr-5 pb-2 pl-5" placeholder="Agrega una tarea a la lista" required>
+            <input type="submit" class="cursor-pointer bg-cyan-300 rounded-sm pt-1 pb-1" value="Agregar tarea">
+        </form>
+
+    </div>
+
+</body>
+</html>
