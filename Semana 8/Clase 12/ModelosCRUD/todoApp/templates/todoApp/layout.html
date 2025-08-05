@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+  <div class="w-full grid min-h-dvh grid-rows-[auto 2fr auto] grid-cols-1 justify-items-center">
+
+    <header class="w-full">
+      <ul class="flex h-fit justify-around gap-2">
+        {# with permite crear una variable. Ideal para sustituír por contenido repetitivo #}
+        {% with estilos_header="bg-cyan-300 py-3 w-full text-center font-bold border-b-2 border-b-2 hover:border-yellow-300 duration-250" %}
+        <a href="#" class="{{ estilos_header }}"><li>Inicio</li></a>
+        <a href="#" class="{{ estilos_header }}"><li>Tareas</li></a>
+        <a href="#" class="{{ estilos_header }}"><li>Licencia</li></a>
+        <a href="#" class="{{ estilos_header }}"><li>Acerca de...</li></a>
+        {% endwith %}
+      </ul>
+    </header>
+
+    <main class="w-[80vw] px-[20px] flex justify-center items-center flex-col bg-cyan-100 rounded-xl py-5 my-5">
+      <h1 class="bg-green-200 py-2 px-4 border-2 border-violet-400 border-dashed">¡Bienvenid@ a la lista de tareas dinámica! 😎</h1>
+      {% block content %}
+
+      {% endblock %}
+    </main>
+
+    <footer class="w-full text-center">
+      <p>C11 - Web50x.ni - Grupo A</p>
+    </footer>
+
+  </div>
+  
+
+
+  
+</body>
+</html>

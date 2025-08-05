@@ -1,0 +1,51 @@
+{% extends 'todoApp/layout.html' %}
+
+{% block title %}
+  TODO App
+{% endblock %}
+
+
+{% block content %}
+
+  <h3 class="font-bold my-3">Agrega una Tarea:</h3>
+  <form action="{% url 'index' %}" method="POST" class="w-[70%] flex items-center justify-center flex-wrap gap-1 bg-yellow-200 p-5">
+    {% csrf_token %}
+
+    <input type="text" name="contenido" class="min-w-[200px] w-[400px] p-4 outline-none border-b-2 border-gray-600 bg-blue-50 focus:bg-blue-100 border-b-orange-400 duration-250" placeholder="Ingresa una Tarea" required>
+    <input type="submit" name="nuevaTarea" class="p-4 min-w-[50px] bg-yellow-400 border-2 border-dashed border-orange-400 cursor-pointer hover:bg-orange-300 duration-250" value="Registrar">
+
+  </form>
+
+  {% if mensaje %}
+    <strong>{{ mensaje }}</strong>
+  {% endif %}
+
+  <h3 class="font-bold my-3">Tareas Disponibles:</h3>
+
+  <section class="w-full flex flex-col items-center gap-3">
+    {% for tarea in tareas %}
+
+      <div class="w-[75%] flex flex-col p-3 gap-3 bg-blue-400 rounded-sm">
+        <div class="w-full">
+          <p class="break-words font-bold bg-blue-300 p-2">{{ tarea.contenido }}</p>
+          {# Puedes hacer uso de condicionales para aplicar estilos dependiendo de uni variable. Sin embargo, se recomienda mantener la lógica del lado de las vistas. #}
+          <p class="text-end {% if tarea.estado == 'pending' %} bg-gray-100 {% else %} bg-yellow-200 {% endif %}">{{ tarea.estado|upper }} | {{ tarea.fechaCreacion }}</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-1">
+          {% if not tarea.estado == 'process' %}
+          <a href="{% url 'editarTarea' tarea.id %}" class="font-bold bg-yellow-200 p-2">Marcar en proceso</a>
+          {% endif %}
+          <a href="{% url 'terminarTarea' tarea.id %}" class="font-bold bg-green-300 p-2">Marcar Terminada</a>
+          <a href="{% url 'eliminarTarea' tarea.id %}" class="font-bold bg-red-200 p-2">Eliminar Tarea</a>
+        </div>
+        
+      </div>
+
+      {% empty %}
+        <hr>
+        <strong class="text-center bg-red-200 py-2 rounded-sm px-2">No hay Tareas Registradas</strong>
+      {% endfor %}
+  </section>
+
+{% endblock %}
