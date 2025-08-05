@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+<body>
+    <h1>Agrega Una Tarea</h1>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="contenido">
+        <input type="submit" value="Agregar Tarea">
+    </form>
+
+    {% for tarea in tareas %}
+     <div>
+        <h1>{{ tarea.contenido }}</h1>
+        <a href="{% url 'eliminar' tarea.id %}">Eliminar</a>
+     </div>
+    {% empty %}
+    <h2>No hay registros</h2>
+    {% endfor %}
+
+</body>
+</html>
