@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consola</title>
+</head>
+<body style="height:100vh; display:flex; justify-content: center; align-items:centre; flex-direction: column">
+    
+    <input type="button" id="miBoton" value="Enviar">
+
+    <script>
+
+        let lista = ['limegreen', 'cyan', 'magenta', 'yellow', 'green'];
+
+        //console.log(lista.length);
+        
+        const btn = document.getElementById('miBoton');
+        const cuerpo = document.querySelector('body');
+
+        btn.addEventListener('click', () => {
+            let aleatorio = Math.floor(Math.random() * lista.length);
+
+            cuerpo.style.backgroundColor = lista[aleatorio];
+        });
+
+        console.log(btn, cuerpo);
+
+        console.log(`Hola ${numero}`); // backticks
+        
+    </script>
+
+</body>
+</html>

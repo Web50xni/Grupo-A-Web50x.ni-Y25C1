@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body style="height:100vh; display:flex; justify-content: center; align-items:centre; flex-direction: column">
+
+    <h1>Lista de Tareas</h1>
+    
+    <ul>
+
+    </ul>
+
+    <form action="" id="form">
+        <input type="text" name="contenido" placeholder="Ingresa una tarea">
+        <input type="submit" value="Agregar">
+    </form>
+
+    <script>
+
+        const input = document.querySelector('input[name="contenido"]');
+        const btn = document.querySelector('input[type="submit"]');
+        const form = document.getElementById('form');
+        let lista = document.querySelector('ul');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevenir que la pagina se refresque
+        
+            let contenido = input.value;
+
+            let elemento = document.createElement('li');
+            elemento.innerText = contenido;
+
+            console.log(elemento)
+            
+            lista.appendChild(elemento);
+
+            // Vaciar el input
+            input.value = '';
+            
+        });
+
+
+    </script>
+
+</body>
+</html>
